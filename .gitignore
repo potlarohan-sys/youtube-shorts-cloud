@@ -1,0 +1,4 @@
+work/
+*.json
+*.mp4
+__pycache__/
