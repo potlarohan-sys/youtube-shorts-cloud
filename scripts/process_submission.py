@@ -59,7 +59,7 @@ def make_title(topic, label):
 
 def upload(video, title, channel, public_approval, token_path):
     # Fail closed: every value other than an exact PUBLIC selection is private.
-    privacy = "public" if public_approval.strip().upper() == "PUBLIC" else "private"
+    privacy = "public" if public_approval.strip().upper() in {"PUBLIC", "YES — UPLOAD PUBLICLY"} else "private"
     creds = Credentials.from_authorized_user_file(str(token_path), YOUTUBE_SCOPE)
     youtube = build("youtube", "v3", credentials=creds, cache_discovery=False)
     request = youtube.videos().insert(
