@@ -2,6 +2,8 @@ name: Venu Backtest Cloud
 on:
   push:
     branches: [venu-hybrid-backtester]
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 jobs:
   backtest:
