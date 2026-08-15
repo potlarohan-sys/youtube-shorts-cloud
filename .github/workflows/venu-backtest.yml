@@ -20,6 +20,9 @@ jobs:
       - name: Run historical backtest
         working-directory: venu_backtester
         run: python cloud_backtest.py
+      - name: Run robust strategy search
+        working-directory: venu_backtester
+        run: python robust_strategy_search.py
       - name: Upload results
         uses: actions/upload-artifact@v4
         with:
@@ -31,4 +34,8 @@ jobs:
             venu_backtester/oos_returns.csv
             venu_backtester/prices.csv
             venu_backtester/price_failures.json
+            venu_backtester/strategy_family_windows.csv
+            venu_backtester/strategy_family_summary.csv
+            venu_backtester/ensemble_oos_returns.csv
+            venu_backtester/strategy_search_summary.json
           if-no-files-found: error
