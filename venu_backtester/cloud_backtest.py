@@ -8,7 +8,7 @@ import requests
 HERE=Path(__file__).resolve().parent
 START='2018-01-01'
 TICKERS=['CMG','MU','TRUMP-USD','SNAP','CVS','PYPL','ROKU','DIS','DOT-USD','LYFT','CEG','T','DDOG','OXY','IEO','SLV','GLD','UNH','BAC','HII','NTLA','BA','WFC','TSLA','W','VZ','SPHD','KO','PG','UBER','GOOG','AAPL','NFLX','WYNN','PAPR','DJT','COST','SPYM','QQQM','JPM','VOO','SPY','NVDA','MSFT','WMT','DASH','SOXQ','VUG','BRK-B','ABNB','Q','SOUN','LMND','JETS','GS','CHWY','SOFI','AMZN','WIT','META','ACN','IBM','CRWV','SPGI','LUV','UAL','DEFT','TSM','RCL','WGS','FDX','INTC','AAL','DAL','FISV','Z','NCLH','JBLU','CRM','PLTR','INFY','FRMI','INTU','CRWD','HOOD','GDDY','CRCL','DUOL','PSFE']
-UA={'User-Agent':'Mozilla/5.0 VenuHybridCloud/1.1'}
+UA={'User-Agent':'Mozilla/5.0 VenuHybridCloud/1.2'}
 
 def unix(x): return int(pd.Timestamp(x,tz='UTC').timestamp())
 
@@ -34,7 +34,13 @@ def prices():
         except Exception as e: fails[t]=str(e); print(f'[{i+1}] FAIL {t}: {e}')
         time.sleep(.08)
     (HERE/'price_failures.json').write_text(json.dumps(fails,indent=2))
-    px=pd.DataFrame(data).sort_index(); px.to_csv(HERE/'prices.csv'); return px
+    px=pd.DataFrame(data).sort_index()
+    if 'SPY' not in px: raise RuntimeError('SPY unavailable')
+    # Equity system: use the US equity trading calendar represented by SPY.
+    # This prevents crypto weekend rows from turning a 200-row MA into ~143 stock sessions.
+    px=px.loc[px['SPY'].notna()].copy()
+    px.to_csv(HERE/'prices.csv')
+    return px
 
 def cs_pct(df): return df.rank(axis=1,pct=True).clip(0,1)
 
@@ -51,12 +57,13 @@ def build_scores(px):
     reg[(spy<spy200)&(spydd>-0.10)]=7; reg[(spy<spy200)&(spydd<=-0.10)]=11; reg[spydd<=-0.20]=14; reg[spy>spy200*1.12]=5
     risk=pd.DataFrame({c:reg for c in px.columns})
     vol=px.pct_change(fill_method=None).rolling(20).std()*np.sqrt(252)
-    # Normalize only active price/risk components to 0-100 for this infrastructure baseline.
     score=((trend+contra+risk)/55.0*100.0).clip(0,100).shift(1)
     return score,vol.shift(1)
 
 def target(srow,vrow,entry=65,maxpos=20):
-    e=srow[srow>=entry].sort_values(ascending=False).head(maxpos); w=pd.Series(0.0,index=srow.index)
+    equity_names=[t for t in srow.index if not str(t).endswith('-USD')]
+    e=srow[equity_names][srow[equity_names]>=entry].sort_values(ascending=False).head(maxpos)
+    w=pd.Series(0.0,index=srow.index)
     for t,s in e.items():
         base=.04 if s>=85 else .03 if s>=75 else .02 if s>=65 else .01
         v=vrow.get(t,np.nan); mult=.5 if pd.notna(v) and v>.70 else .75 if pd.notna(v) and v>.45 else 1
@@ -78,7 +85,7 @@ def simulate(px,scores,vol,start,end,entry,maxpos):
     return pd.Series(out,index=idx)
 
 def perf(r):
-    r=r.dropna();
+    r=r.dropna()
     if len(r)<2: return {}
     eq=(1+r).cumprod(); yrs=len(r)/252; vol=r.std()*np.sqrt(252); dd=eq/eq.cummax()-1
     return {'CAGR':eq.iloc[-1]**(1/yrs)-1,'AnnVol':vol,'Sharpe':r.mean()/r.std()*np.sqrt(252) if r.std()>0 else np.nan,'MaxDrawdown':dd.min(),'TotalReturn':eq.iloc[-1]-1}
@@ -89,7 +96,8 @@ def main():
     scores,vol=build_scores(px); full=simulate(px,scores,vol,px.index.min(),px.index.max(),65,20)
     dr=px.pct_change(fill_method=None).fillna(0)
     bench={'Strategy':full,'SPY':dr['SPY'].reindex(full.index).fillna(0),'QQQ':dr['QQQ'].reindex(full.index).fillna(0)}
-    valid=[c for c in TICKERS if c in dr.columns]; bench['EqualWeightWatchlist']=dr[valid].mean(axis=1,skipna=True).reindex(full.index).fillna(0)
+    valid=[c for c in TICKERS if c in dr.columns and not c.endswith('-USD')]
+    bench['EqualWeightWatchlist']=dr[valid].mean(axis=1,skipna=True).reindex(full.index).fillna(0)
     metrics=pd.DataFrame({k:perf(v) for k,v in bench.items()}); metrics.to_csv(HERE/'metrics.csv')
     rows=[]; stitched=[]; cur=px.index.min().normalize(); end=px.index.max().normalize()
     while True:
@@ -106,7 +114,7 @@ def main():
         cur+=pd.DateOffset(years=1)
     wf=pd.DataFrame(rows); wf.to_csv(HERE/'walk_forward_results.csv',index=False)
     oos=pd.concat(stitched).sort_index(); oos=oos[~oos.index.duplicated()]; oos.to_csv(HERE/'oos_returns.csv',header=['strategy_return'])
-    summary={'price_symbols_available':len(px.columns),'watchlist_size':len(TICKERS),'baseline_metrics':metrics.to_dict(),'oos':perf(oos),'note':'Price/risk infrastructure baseline only. Fundamental and veteran-investor overlays are not active yet.'}
+    summary={'price_symbols_available':len(px.columns),'watchlist_size':len(TICKERS),'baseline_metrics':metrics.to_dict(),'oos':perf(oos),'note':'Equity-calendar-corrected price/risk baseline; crypto excluded from trading. Fundamental and veteran overlays not active yet.'}
     (HERE/'summary.json').write_text(json.dumps(summary,indent=2,default=str)); print(metrics); print('\nWalk-forward\n',wf); print('\nOOS',perf(oos))
 
 if __name__=='__main__': main()
