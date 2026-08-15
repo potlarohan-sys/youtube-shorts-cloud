@@ -1,0 +1,13 @@
+{
+  "strategy": "fixed_consistency_candidate_v1",
+  "status": "NOT_STARTED",
+  "start_date": null,
+  "last_evaluated_date": null,
+  "initial_equity": 100000.0,
+  "current_equity": 100000.0,
+  "peak_equity": 100000.0,
+  "max_drawdown": 0.0,
+  "rebalance_cycles": 0,
+  "live_trading_enabled": false,
+  "note": "Forward paper test only. Never place real broker orders."
+}
