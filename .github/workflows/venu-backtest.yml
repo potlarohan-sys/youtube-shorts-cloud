@@ -26,6 +26,9 @@ jobs:
       - name: Run conservative consistency search
         working-directory: venu_backtester
         run: python conservative_strategy_search.py
+      - name: Run fixed candidate gate
+        working-directory: venu_backtester
+        run: python fixed_candidate.py
       - name: Upload results
         uses: actions/upload-artifact@v4
         with:
@@ -45,4 +48,8 @@ jobs:
             venu_backtester/conservative_summary.csv
             venu_backtester/conservative_ensemble_oos.csv
             venu_backtester/conservative_summary.json
+            venu_backtester/candidate_stress.csv
+            venu_backtester/candidate_gate.csv
+            venu_backtester/candidate_returns.csv
+            venu_backtester/candidate_summary.json
           if-no-files-found: error
