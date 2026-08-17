@@ -5,8 +5,11 @@ on:
   pull_request:
     branches: [main]
   workflow_dispatch:
+permissions:
+  contents: write
 jobs:
   backtest:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -29,6 +32,19 @@ jobs:
       - name: Run fixed candidate gate
         working-directory: venu_backtester
         run: python fixed_candidate.py
+      - name: Run forward paper test
+        working-directory: venu_backtester
+        run: python forward_paper.py
+      - name: Persist forward paper state
+        if: github.ref == 'refs/heads/venu-hybrid-backtester' && github.event_name != 'pull_request'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add venu_backtester/forward_paper_state.json venu_backtester/forward_paper_ledger.csv
+          if ! git diff --cached --quiet; then
+            git commit -m "Update forward paper state [skip ci]"
+            git push origin HEAD:venu-hybrid-backtester
+          fi
       - name: Upload results
         uses: actions/upload-artifact@v4
         with:
@@ -52,4 +68,6 @@ jobs:
             venu_backtester/candidate_gate.csv
             venu_backtester/candidate_returns.csv
             venu_backtester/candidate_summary.json
+            venu_backtester/forward_paper_state.json
+            venu_backtester/forward_paper_ledger.csv
           if-no-files-found: error
