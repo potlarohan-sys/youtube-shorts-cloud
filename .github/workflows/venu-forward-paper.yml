@@ -4,9 +4,7 @@ on:
   push:
     branches: [venu-hybrid-backtester]
     paths:
-      - '.github/workflows/venu-forward-paper.yml'
-  schedule:
-    - cron: '35 22 * * 1-5'
+      - 'venu_backtester/PAPER_HEARTBEAT.txt'
   workflow_dispatch:
 
 permissions:
@@ -14,8 +12,9 @@ permissions:
 
 jobs:
   forward-paper:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
         with:
@@ -27,7 +26,7 @@ jobs:
       - name: Install dependencies
         working-directory: venu_backtester
         run: pip install -r requirements-cloud.txt
-      - name: Run forward paper test
+      - name: Run forward paper logger
         working-directory: venu_backtester
         run: python forward_paper.py
       - name: Persist paper state and ledger
