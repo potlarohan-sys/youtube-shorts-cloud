@@ -1,8 +1,8 @@
 {
   "strategy": "aapl_bull_call_spread_candidate_b_v1",
-  "status": "NOT_STARTED",
-  "start_date": null,
-  "last_evaluated_date": null,
+  "status": "RUNNING",
+  "start_date": "2026-08-24",
+  "last_evaluated_date": "2026-08-24",
   "open_position": null,
   "completed_trades": 0,
   "initial_paper_capital": 1000.0,
@@ -10,5 +10,13 @@
   "peak_equity": 1000.0,
   "max_drawdown": 0.0,
   "live_trading_enabled": false,
+  "last_scan": {
+    "aapl_close": 310.34,
+    "fresh_valid_setup": false,
+    "decision": "NO_TRADE",
+    "reason": "No fresh double-bottom plus bullish-confirmation entry was valid for 2026-08-24. The earlier late-July/August double-bottom confirmed on 2026-08-19, whose rule-defined next-close entry was 2026-08-20, so it is not eligible for retroactive entry. A newer candidate pair has not produced a close above its interim neckline with the required confirmation.",
+    "options_chain_needed": false,
+    "data_notes": "AAPL regular-session close verified at 310.34 on 2026-08-24. Historical August OHLC used for pattern scan. No option spread was priced because the underlying entry condition failed before option selection."
+  },
   "note": "Experimental forward-paper options test only. Separate from frozen Candidate A."
 }
