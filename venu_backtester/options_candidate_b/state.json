@@ -2,7 +2,7 @@
   "strategy": "aapl_bull_call_spread_candidate_b_v1",
   "status": "RUNNING",
   "start_date": "2026-08-24",
-  "last_evaluated_date": "2026-08-24",
+  "last_evaluated_date": "2026-08-25",
   "open_position": null,
   "completed_trades": 0,
   "initial_paper_capital": 1000.0,
@@ -11,12 +11,12 @@
   "max_drawdown": 0.0,
   "live_trading_enabled": false,
   "last_scan": {
-    "aapl_close": 310.34,
+    "aapl_close": 309.86,
     "fresh_valid_setup": false,
     "decision": "NO_TRADE",
-    "reason": "No fresh double-bottom plus bullish-confirmation entry was valid for 2026-08-24. The earlier late-July/August double-bottom confirmed on 2026-08-19, whose rule-defined next-close entry was 2026-08-20, so it is not eligible for retroactive entry. A newer candidate pair has not produced a close above its interim neckline with the required confirmation.",
+    "reason": "No fresh rule-valid double-bottom plus bullish-confirmation entry was present for 2026-08-25. The prior August reversal setup had already confirmed before the forward test and is not eligible for retroactive entry. The newest possible low near 2026-08-25 is not yet part of a qualifying pair separated by at least 3 sessions with a subsequent neckline breakout and close above the 20-day moving average.",
     "options_chain_needed": false,
-    "data_notes": "AAPL regular-session close verified at 310.34 on 2026-08-24. Historical August OHLC used for pattern scan. No option spread was priced because the underlying entry condition failed before option selection."
+    "data_notes": "AAPL regular-session close verified at 309.86 on 2026-08-25, with session high 313.50 and low 308.22. Historical daily OHLC from late July through 2026-08-25 was reviewed. Because the underlying setup/confirmation filter failed, no option chain was priced and no paper spread was opened."
   },
   "note": "Experimental forward-paper options test only. Separate from frozen Candidate A."
 }
