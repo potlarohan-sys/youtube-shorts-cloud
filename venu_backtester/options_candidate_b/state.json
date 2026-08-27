@@ -1,8 +1,8 @@
 {
-  "strategy": "aapl_bull_call_spread_candidate_b_v1",
-  "status": "RUNNING",
+  "strategy": "watchlist_bull_call_spread_candidate_b_v1",
+  "status": "RUNNING_DATA_LIMITED",
   "start_date": "2026-08-24",
-  "last_evaluated_date": "2026-08-26",
+  "last_evaluated_date": "2026-08-27",
   "open_position": null,
   "completed_trades": 0,
   "initial_paper_capital": 1000.0,
@@ -11,12 +11,9 @@
   "max_drawdown": 0.0,
   "live_trading_enabled": false,
   "last_scan": {
-    "aapl_close": 313.45,
-    "fresh_valid_setup": false,
-    "decision": "NO_TRADE",
-    "reason": "A new potential double-bottom pair is forming using the 2026-08-21 low near 307.01 and the 2026-08-26 low near 308.80. The lows are within 2% and are separated by at least 3 trading-session indices, but the required bullish confirmation did not occur: AAPL closed 313.45 on 2026-08-26, below the interim swing-high/neckline near 313.59 set on 2026-08-25. Without a close above the neckline, Candidate B does not permit an entry. No retroactive entry from the earlier August reversal is allowed.",
-    "options_chain_needed": false,
-    "data_notes": "AAPL regular-session close verified at 313.45 on 2026-08-26, up 1.15%, with session range approximately 308.80 to 315.43. Recent daily OHLC was reviewed through 2026-08-26. Because the underlying confirmation filter failed, no option chain was priced and no paper spread was opened."
+    "decision": "NO_TRADE_DATA_LIMITED",
+    "data_problem": true,
+    "reason": "Full-watchlist scan could not be validated because consistent end-of-day price histories and option bid/ask data were unavailable for the complete eligible universe. No paper position was opened."
   },
-  "note": "Experimental forward-paper options test only. Separate from frozen Candidate A."
+  "note": "Experimental forward-paper test only."
 }
