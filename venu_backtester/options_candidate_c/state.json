@@ -1,0 +1,14 @@
+{
+  "strategy": "late_day_0dte_spy_put_candidate_c_v1",
+  "status": "NOT_STARTED",
+  "start_date": null,
+  "last_evaluated_date": null,
+  "open_position": null,
+  "completed_trades": 0,
+  "initial_paper_capital": 1000.0,
+  "paper_equity": 1000.0,
+  "peak_equity": 1000.0,
+  "max_drawdown": 0.0,
+  "live_trading_enabled": false,
+  "note": "Experimental forward-paper only. SPY adaptation of uploaded SPXW example to remain inside the user's watchlist."
+}
