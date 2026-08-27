@@ -2,25 +2,25 @@
   "strategy": "fixed_consistency_candidate_v1",
   "status": "RUNNING",
   "start_date": "2026-08-17",
-  "last_evaluated_date": "2026-08-26",
+  "last_evaluated_date": "2026-08-27",
   "initial_equity": 100000.0,
-  "current_equity": 98615.0659993702,
+  "current_equity": 99545.18909198816,
   "peak_equity": 100000.0,
   "max_drawdown": -0.01710059602303471,
-  "rebalance_cycles": 4,
+  "rebalance_cycles": 5,
   "live_trading_enabled": false,
   "note": "Forward paper test only. Never place real broker orders.",
-  "cash": 12326.09026784291,
+  "cash": 12442.195048332886,
   "shares": {
-    "IEO": 91.9919545457924,
-    "INTC": 27.939533562018575,
-    "MU": 2.6272211399041936,
-    "QQQ": 17.328425423826747,
-    "SOXQ": 134.8678523341813,
-    "SPY": 28.963631659175523,
-    "GLD": 17.55471617038623,
-    "CRWD": 13.031950931790334,
-    "QQQM": 42.08755388730708
+    "IEO": 93.6218833836863,
+    "INTC": 27.37031653080272,
+    "MU": 2.6835932237602576,
+    "QQQ": 17.320590371141684,
+    "SOXQ": 133.75561675432897,
+    "SPY": 29.122654292186983,
+    "GLD": 17.78120136992789,
+    "CRWD": 11.08434404649224,
+    "QQQM": 42.06939250366341
   },
   "pending_target": {
     "MU": 0.024999999999999998,
@@ -33,7 +33,7 @@
     "CRWD": 0.024999999999999998,
     "QQQ": 0.125
   },
-  "pending_signal_date": "2026-08-26",
+  "pending_signal_date": "2026-08-27",
   "daily_equity": [
     {
       "date": "2026-08-17",
@@ -66,6 +66,10 @@
     {
       "date": "2026-08-26",
       "equity": 98615.0659993702
+    },
+    {
+      "date": "2026-08-27",
+      "equity": 99545.18909198816
     }
   ]
 }
