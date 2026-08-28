@@ -2,7 +2,7 @@
   "strategy": "watchlist_bull_call_spread_candidate_b_v1",
   "status": "RUNNING_DATA_LIMITED",
   "start_date": "2026-08-24",
-  "last_evaluated_date": "2026-08-27",
+  "last_evaluated_date": "2026-08-28",
   "open_position": null,
   "completed_trades": 0,
   "initial_paper_capital": 1000.0,
@@ -13,7 +13,9 @@
   "last_scan": {
     "decision": "NO_TRADE_DATA_LIMITED",
     "data_problem": true,
-    "reason": "Full-watchlist scan could not be validated because consistent end-of-day price histories and option bid/ask data were unavailable for the complete eligible universe. No paper position was opened."
+    "reason": "The full eligible watchlist could not be mechanically validated on 2026-08-28 because consistent 10-30 session OHLC histories and executable 7-14 DTE option bid/ask chains were not available across the complete universe. Fresh public sources showed several large watchlist moves and described NVDA as having an existing double-bottom breakout, but the strategy forbids retroactive entries and requires a fresh rule-qualified confirmation plus next-session entry. No complete fresh-confirmation candidate could be validated without cherry-picking or optimistic option pricing, so no paper position was opened.",
+    "market_context": "U.S. indexes closed modestly lower on 2026-08-28. GOOG closed 342.88 (+1.53%), MSFT 513.53 (+1.68%), AMZN 266.43 (+3.97%), META 578.02 (+1.21%). PYPL fell sharply after takeover-bid reports. NVDA had an existing technical double-bottom breakout discussed in fresh technical coverage, but it was not treated as a new Candidate B signal.",
+    "options_chain_needed": false
   },
-  "note": "Experimental forward-paper test only."
+  "note": "Experimental forward-paper test only. Separate from frozen Candidate A."
 }
