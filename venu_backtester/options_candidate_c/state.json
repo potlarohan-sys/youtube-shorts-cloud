@@ -1,8 +1,8 @@
 {
   "strategy": "late_day_0dte_spy_put_candidate_c_v1",
-  "status": "NOT_STARTED",
-  "start_date": null,
-  "last_evaluated_date": null,
+  "status": "RUNNING_DATA_BLOCKED",
+  "start_date": "2026-08-28",
+  "last_evaluated_date": "2026-08-28",
   "open_position": null,
   "completed_trades": 0,
   "initial_paper_capital": 1000.0,
@@ -10,5 +10,12 @@
   "peak_equity": 1000.0,
   "max_drawdown": 0.0,
   "live_trading_enabled": false,
-  "note": "Experimental forward-paper only. SPY adaptation of uploaded SPXW example to remain inside the user's watchlist."
+  "last_scan": {
+    "evaluation_time_et": "2026-08-28 15:49",
+    "decision": "NO_TRADE_DATA_BLOCKED",
+    "reason": "Could not obtain a trustworthy contemporaneous 1-minute SPY bar series for the 3:45-3:52 PM ET evaluation window. Without those bars, the required 9-EMA, 20-EMA, prior-10-bar low break, 5-minute return, and 20-EMA distance filters cannot be calculated without inventing data. Public sources confirmed SPY was around 768.48 at 3:00 PM ET and that same-day SPY options existed with active liquidity, but that is insufficient to validate the exact entry signal.",
+    "option_chain_checked": true,
+    "trade_opened": false
+  },
+  "note": "Experimental forward-paper only. SPY adaptation of uploaded SPXW example to remain inside the user's watchlist. No trade is recorded when exact intraday trigger data is unavailable."
 }
