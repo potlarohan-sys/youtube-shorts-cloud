@@ -2,7 +2,7 @@
   "strategy": "watchlist_bull_call_spread_candidate_b_v1",
   "status": "RUNNING_DATA_LIMITED",
   "start_date": "2026-08-24",
-  "last_evaluated_date": "2026-08-28",
+  "last_evaluated_date": "2026-08-31",
   "open_position": null,
   "completed_trades": 0,
   "initial_paper_capital": 1000.0,
@@ -13,9 +13,14 @@
   "last_scan": {
     "decision": "NO_TRADE_DATA_LIMITED",
     "data_problem": true,
-    "reason": "The full eligible watchlist could not be mechanically validated on 2026-08-28 because consistent 10-30 session OHLC histories and executable 7-14 DTE option bid/ask chains were not available across the complete universe. Fresh public sources showed several large watchlist moves and described NVDA as having an existing double-bottom breakout, but the strategy forbids retroactive entries and requires a fresh rule-qualified confirmation plus next-session entry. No complete fresh-confirmation candidate could be validated without cherry-picking or optimistic option pricing, so no paper position was opened.",
-    "market_context": "U.S. indexes closed modestly lower on 2026-08-28. GOOG closed 342.88 (+1.53%), MSFT 513.53 (+1.68%), AMZN 266.43 (+3.97%), META 578.02 (+1.21%). PYPL fell sharply after takeover-bid reports. NVDA had an existing technical double-bottom breakout discussed in fresh technical coverage, but it was not treated as a new Candidate B signal.",
-    "options_chain_needed": false
+    "reason": "The full eligible watchlist could not be mechanically validated on 2026-08-31 because consistent prior-10-to-30-session OHLC histories plus executable 7-14 DTE option bid/ask chains were not available across the complete universe from the accessible public sources. Fresh close coverage confirmed notable watchlist moves, including TSLA +5.51%, MU +2.77%, NVDA +1.48%, while GOOG, AMZN, MSFT and AAPL declined. Nasdaq Dorsey Wright reported a TSLA point-and-figure double-top buy signal, not the Candidate B double-bottom/neckline setup. No rule-qualified fresh double-bottom confirmation and next-session executable spread could be validated across the complete universe without cherry-picking, so no paper position was opened.",
+    "market_context": "On 2026-08-31 the S&P 500 fell 0.33%, Dow 0.70%, and Nasdaq about 0.12%-0.16%. Watchlist movers included TSLA +5.51%, MU +2.77%, NVDA +1.48%, AMZN -2.5%, GOOG -2.18%, MSFT -1.22%, and AAPL -0.89%.",
+    "options_chain_needed": false,
+    "sources_checked": [
+      "Reuters 2026-08-31 U.S. market close",
+      "WMTMT 2026-08-31 market-close constituent moves",
+      "Nasdaq Dorsey Wright 2026-08-31 technical notes"
+    ]
   },
   "note": "Experimental forward-paper test only. Separate from frozen Candidate A."
 }
