@@ -2,7 +2,7 @@
   "strategy": "watchlist_bull_call_spread_candidate_b_v1",
   "status": "RUNNING_DATA_LIMITED",
   "start_date": "2026-08-24",
-  "last_evaluated_date": "2026-08-31",
+  "last_evaluated_date": "2026-09-01",
   "open_position": null,
   "completed_trades": 0,
   "initial_paper_capital": 1000.0,
@@ -13,13 +13,13 @@
   "last_scan": {
     "decision": "NO_TRADE_DATA_LIMITED",
     "data_problem": true,
-    "reason": "The full eligible watchlist could not be mechanically validated on 2026-08-31 because consistent prior-10-to-30-session OHLC histories plus executable 7-14 DTE option bid/ask chains were not available across the complete universe from the accessible public sources. Fresh close coverage confirmed notable watchlist moves, including TSLA +5.51%, MU +2.77%, NVDA +1.48%, while GOOG, AMZN, MSFT and AAPL declined. Nasdaq Dorsey Wright reported a TSLA point-and-figure double-top buy signal, not the Candidate B double-bottom/neckline setup. No rule-qualified fresh double-bottom confirmation and next-session executable spread could be validated across the complete universe without cherry-picking, so no paper position was opened.",
-    "market_context": "On 2026-08-31 the S&P 500 fell 0.33%, Dow 0.70%, and Nasdaq about 0.12%-0.16%. Watchlist movers included TSLA +5.51%, MU +2.77%, NVDA +1.48%, AMZN -2.5%, GOOG -2.18%, MSFT -1.22%, and AAPL -0.89%.",
+    "reason": "The full eligible watchlist could not be mechanically validated on 2026-09-01 because accessible public sources did not provide consistent prior-10-to-30-session OHLC histories together with executable 7-14 DTE option bid/ask chains across the complete universe. Fresh U.S. market-close reporting showed a broad risk-off session, with the S&P 500 down 0.71%, Dow down 0.79%, and Nasdaq down 1.03%; Nvidia and Amazon were among notable technology decliners. Fresh single-name coverage showed AAPL +2.61% while SNAP fell 3.60%, but isolated daily moves are insufficient to establish Candidate B's required two-bottom geometry, neckline breakout, 20-day-MA confirmation, next-session timing, and executable spread debit. No rule-qualified fresh double-bottom confirmation could therefore be validated across the complete universe without cherry-picking, so no paper position was opened.",
+    "market_context": "On 2026-09-01 rising oil prices and Treasury yields pressured U.S. equities. S&P 500 closed 7631.47 (-0.71%), Dow 52766.88 (-0.79%), Nasdaq 26099.77 (-1.03%). AAPL advanced 2.61% to 325.13 while SNAP declined 3.60% to 5.35 in fresh reported coverage.",
     "options_chain_needed": false,
     "sources_checked": [
-      "Reuters 2026-08-31 U.S. market close",
-      "WMTMT 2026-08-31 market-close constituent moves",
-      "Nasdaq Dorsey Wright 2026-08-31 technical notes"
+      "Reuters 2026-09-01 U.S. market close",
+      "Associated Press 2026-09-01 index close",
+      "MarketWatch 2026-09-01 SNAP/AAPL close coverage"
     ]
   },
   "note": "Experimental forward-paper test only. Separate from frozen Candidate A."
