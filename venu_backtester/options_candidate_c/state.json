@@ -2,7 +2,7 @@
   "strategy": "late_day_0dte_spy_put_candidate_c_v1",
   "status": "RUNNING_DATA_BLOCKED",
   "start_date": "2026-08-28",
-  "last_evaluated_date": "2026-08-31",
+  "last_evaluated_date": "2026-09-01",
   "open_position": null,
   "completed_trades": 0,
   "initial_paper_capital": 1000.0,
@@ -11,12 +11,12 @@
   "max_drawdown": 0.0,
   "live_trading_enabled": false,
   "last_scan": {
-    "evaluation_time_et": "2026-08-31 15:50",
+    "evaluation_time_et": "2026-09-01 15:50",
     "decision": "NO_TRADE_DATA_BLOCKED",
-    "reason": "Could not obtain a trustworthy contemporaneous 1-minute SPY bar series covering the 3:45-3:52 PM ET evaluation window. Without exact completed 1-minute bars, the required 9-EMA, 20-EMA, EMA ordering, prior-10-bar low break by 0.05%, 5-minute return, and distance-below-20-EMA filters cannot be calculated without inventing data. Same-day SPY 0DTE puts and substantial liquidity were independently confirmed, but available option quotes were delayed/indicative and do not substitute for the missing underlying trigger series. No paper trade was opened.",
+    "reason": "Could not obtain a trustworthy contemporaneous 1-minute SPY bar series covering the 3:45-3:52 PM ET evaluation window. Public sources confirmed SPY 0DTE options expiring 2026-09-01 and liquid contracts, but available chain quotes were delayed/indicative. Without exact completed 1-minute bars, the required 9-EMA, 20-EMA, EMA ordering, prior-10-bar low break by 0.05%, 5-minute return, and distance-below-20-EMA filters cannot be calculated without inventing data. No paper trade was opened.",
     "option_chain_checked": true,
     "trade_opened": false,
-    "data_notes": "Public sources on 2026-08-31 confirmed a same-day SPY option expiration and very high put volume at several strikes; however, the required contemporaneous 1-minute SPY bars were not accessible through the available sources at evaluation time."
+    "data_notes": "Same-day SPY option expiration and substantial liquidity were verified on 2026-09-01. The exact contemporaneous 1-minute underlying series required for the mechanical trigger was not accessible through available sources at evaluation time."
   },
   "note": "Experimental forward-paper only. SPY adaptation of uploaded SPXW example to remain inside the user's watchlist. No trade is recorded when exact intraday trigger data is unavailable."
 }
