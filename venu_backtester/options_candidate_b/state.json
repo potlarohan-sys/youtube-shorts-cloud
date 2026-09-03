@@ -2,7 +2,7 @@
   "strategy": "watchlist_bull_call_spread_candidate_b_v1",
   "status": "RUNNING_DATA_LIMITED",
   "start_date": "2026-08-24",
-  "last_evaluated_date": "2026-09-02",
+  "last_evaluated_date": "2026-09-03",
   "open_position": null,
   "completed_trades": 0,
   "initial_paper_capital": 1000.0,
@@ -13,13 +13,12 @@
   "last_scan": {
     "decision": "NO_TRADE_DATA_LIMITED",
     "data_problem": true,
-    "reason": "The full eligible watchlist could not be mechanically validated on 2026-09-02 because accessible public sources did not provide consistent prior-10-to-30-session OHLC histories together with executable 7-14 DTE option bid/ask chains across the complete universe. Fresh market-close reporting verified a positive U.S. session and several watchlist moves, but isolated daily closes cannot establish Candidate B's required two-bottom geometry, neckline breakout, 20-day moving-average confirmation, next-session timing, and executable debit filter. No rule-qualified fresh setup was therefore asserted and no paper position was opened.",
-    "market_context": "On 2026-09-02 the S&P 500 rose about 0.46%, Dow about 0.56%, and Nasdaq about 0.45%. Watchlist names included NVDA +3.2%, MU +2.4%, UBER +1.6%, SNAP +4.49%, while MSFT fell 0.84% and AAPL slipped 0.05%.",
+    "reason": "The full eligible watchlist could not be mechanically validated on 2026-09-03 because accessible public sources did not provide consistent prior-10-to-30-session OHLC histories together with executable 7-14 DTE option bid/ask chains across the complete universe. Fresh same-day market-close reporting verifies a broad rally and individual watchlist moves, but one-day performance cannot establish Candidate B's required two-bottom geometry, neckline breakout, 20-day moving-average confirmation, next-session entry timing, ranking across all eligible names, and executable debit filter. No rule-qualified fresh setup was asserted and no paper position was opened.",
+    "market_context": "On 2026-09-03 the S&P 500 rose about 1.1%, Dow about 1.2%, and Nasdaq about 1.4%. Watchlist names included MSFT +2.7%, AAPL +1.0%, META +3.0%, NVDA +1.8%, with a broad technology-led rally.",
     "options_chain_needed": false,
     "sources_checked": [
-      "Reuters 2026-09-02 U.S. market close",
-      "Associated Press 2026-09-02 index close",
-      "MarketWatch 2026-09-02 SNAP close coverage"
+      "Reuters 2026-09-03 U.S. market close",
+      "Associated Press 2026-09-03 U.S. market close"
     ]
   },
   "note": "Experimental forward-paper test only. Separate from frozen Candidate A."
