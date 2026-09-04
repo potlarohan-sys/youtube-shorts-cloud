@@ -2,7 +2,7 @@
   "strategy": "watchlist_bull_call_spread_candidate_b_v1",
   "status": "RUNNING_DATA_LIMITED",
   "start_date": "2026-08-24",
-  "last_evaluated_date": "2026-09-03",
+  "last_evaluated_date": "2026-09-04",
   "open_position": null,
   "completed_trades": 0,
   "initial_paper_capital": 1000.0,
@@ -13,12 +13,13 @@
   "last_scan": {
     "decision": "NO_TRADE_DATA_LIMITED",
     "data_problem": true,
-    "reason": "The full eligible watchlist could not be mechanically validated on 2026-09-03 because accessible public sources did not provide consistent prior-10-to-30-session OHLC histories together with executable 7-14 DTE option bid/ask chains across the complete universe. Fresh same-day market-close reporting verifies a broad rally and individual watchlist moves, but one-day performance cannot establish Candidate B's required two-bottom geometry, neckline breakout, 20-day moving-average confirmation, next-session entry timing, ranking across all eligible names, and executable debit filter. No rule-qualified fresh setup was asserted and no paper position was opened.",
-    "market_context": "On 2026-09-03 the S&P 500 rose about 1.1%, Dow about 1.2%, and Nasdaq about 1.4%. Watchlist names included MSFT +2.7%, AAPL +1.0%, META +3.0%, NVDA +1.8%, with a broad technology-led rally.",
+    "reason": "The full eligible watchlist could not be mechanically validated on 2026-09-04 because accessible public sources did not provide consistent prior-10-to-30-session OHLC histories together with executable 7-14 DTE option bid/ask chains across the complete universe. Fresh same-day market-close reporting verifies broad-market and individual watchlist moves, but one-day performance cannot establish Candidate B's required two-bottom geometry, neckline breakout, 20-day moving-average confirmation, next-session entry timing, ranking across all eligible names, and executable debit filter. No rule-qualified fresh setup was asserted and no paper position was opened.",
+    "market_context": "On 2026-09-04 the S&P 500 fell about 0.4%, Dow about 0.5%, and Nasdaq about 0.3% after stronger-than-expected August payrolls pushed Treasury yields higher and increased rate-hike expectations. Among major watchlist technology names, TSLA fell roughly 6%, while AAPL, MSFT, GOOG, AMZN and META also declined; NVDA was a relative gainer.",
     "options_chain_needed": false,
     "sources_checked": [
-      "Reuters 2026-09-03 U.S. market close",
-      "Associated Press 2026-09-03 U.S. market close"
+      "Reuters 2026-09-04 U.S. market close",
+      "Associated Press 2026-09-04 U.S. market close",
+      "MarketWatch 2026-09-04 market coverage"
     ]
   },
   "note": "Experimental forward-paper test only. Separate from frozen Candidate A."
