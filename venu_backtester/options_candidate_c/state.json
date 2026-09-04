@@ -2,7 +2,7 @@
   "strategy": "late_day_0dte_spy_put_candidate_c_v1",
   "status": "RUNNING_DATA_BLOCKED",
   "start_date": "2026-08-28",
-  "last_evaluated_date": "2026-09-03",
+  "last_evaluated_date": "2026-09-04",
   "open_position": null,
   "completed_trades": 0,
   "initial_paper_capital": 1000.0,
@@ -11,12 +11,12 @@
   "max_drawdown": 0.0,
   "live_trading_enabled": false,
   "last_scan": {
-    "evaluation_time_et": "2026-09-03 15:47",
+    "evaluation_time_et": "2026-09-04 15:50",
     "decision": "NO_TRADE_DATA_BLOCKED",
-    "reason": "Same-day SPY 0DTE option quotes and liquidity were verifiable, but a trustworthy contemporaneous 1-minute SPY bar series covering the 3:45-3:52 PM ET evaluation window was not available through the accessible sources. Without those exact bars, the required 9-EMA, 20-EMA, EMA ordering, prior-10-bar low break by 0.05%, 5-minute return, and distance-below-20-EMA filters cannot be evaluated mechanically. No paper trade was opened rather than infer or fabricate a trigger.",
+    "reason": "Same-day 2026-09-04 SPY 0DTE options and liquid bid/ask markets were verifiable, but a trustworthy contemporaneous 1-minute SPY bar series covering the 3:45-3:52 PM ET evaluation window was not available through accessible sources. Without those exact bars, the required 9-EMA, 20-EMA, EMA ordering, prior-10-bar low break by 0.05%, 5-minute return, and distance-below-20-EMA filters cannot be evaluated mechanically. No paper trade was opened rather than infer or fabricate a trigger.",
     "option_chain_checked": true,
     "trade_opened": false,
-    "data_notes": "Cboe delayed SPY quote/chain and public same-day option-chain sources confirmed active 2026-09-03 options with substantial volume and usable bid/ask quotes, but did not supply the exact contemporaneous 1-minute underlying history needed for the trigger calculation."
+    "data_notes": "Public option-chain data confirmed Sep 04, 2026 SPY contracts and substantial liquidity, but accessible web sources did not provide the exact live 1-minute underlying history required by Candidate C."
   },
   "note": "Experimental forward-paper only. SPY adaptation of uploaded SPXW example to remain inside the user's watchlist. No trade is recorded when exact intraday trigger data is unavailable."
 }
