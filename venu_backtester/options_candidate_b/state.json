@@ -2,7 +2,7 @@
   "strategy": "watchlist_bull_call_spread_candidate_b_v1",
   "status": "RUNNING_DATA_LIMITED",
   "start_date": "2026-08-24",
-  "last_evaluated_date": "2026-09-07",
+  "last_evaluated_date": "2026-09-08",
   "open_position": null,
   "completed_trades": 0,
   "initial_paper_capital": 1000.0,
@@ -11,12 +11,16 @@
   "max_drawdown": 0.0,
   "live_trading_enabled": false,
   "last_scan": {
-    "decision": "NO_TRADE_MARKET_HOLIDAY",
-    "data_problem": false,
-    "reason": "2026-09-07 was Labor Day and U.S. stock and listed-options markets were closed. There was no regular-session close to evaluate, no new Candidate B confirmation/entry opportunity, and no open Candidate B position requiring management. The forward-paper test therefore records a non-trading-day no-trade without changing equity or trade counts.",
-    "market_context": "U.S. markets closed for Labor Day on Monday, 2026-09-07.",
-    "options_chain_needed": false,
-    "sources_checked": []
+    "decision": "NO_TRADE_DATA_LIMITED",
+    "data_problem": true,
+    "reason": "Fresh 2026-09-08 market-close information was available, but this run could not obtain a complete, consistent 10-30-session OHLC dataset and executable 7-14 DTE option bid/ask chains for every eligible stock in the STRATEGY.md watchlist. Those inputs are required to mechanically verify two local lows within 2%, >=3-session separation, neckline breakout, close above 20-day MA, next-session entry timing, cross-candidate ranking, liquidity, and debit <=40% of width. Public search also surfaced NVDA double-top risk rather than the required double-bottom confirmation. A partial-universe scan was not treated as a valid full-universe Candidate B evaluation, so no position was manufactured.",
+    "market_context": "On 2026-09-08, S&P 500 closed 7,673.52 (-0.58%), Dow 52,786.07 (-1.18%), Nasdaq 26,421.41 (-0.32%) as rising oil prices pressured U.S. equities.",
+    "options_chain_needed": true,
+    "sources_checked": [
+      "Reuters 2026-09-08 U.S. market close",
+      "Associated Press 2026-09-08 index close",
+      "Investing.com 2026-09-08 NVDA technical levels"
+    ]
   },
   "note": "Experimental forward-paper test only. Separate from frozen Candidate A."
 }
