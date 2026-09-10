@@ -2,7 +2,7 @@
   "strategy": "watchlist_bull_call_spread_candidate_b_v1",
   "status": "RUNNING_DATA_LIMITED",
   "start_date": "2026-08-24",
-  "last_evaluated_date": "2026-09-09",
+  "last_evaluated_date": "2026-09-10",
   "open_position": null,
   "completed_trades": 0,
   "initial_paper_capital": 1000.0,
@@ -13,12 +13,12 @@
   "last_scan": {
     "decision": "NO_TRADE_DATA_LIMITED",
     "data_problem": true,
-    "reason": "Fresh 2026-09-09 closing-market information was verified, but this run still could not obtain a complete consistent 10-30-session OHLC dataset and executable 7-14 DTE option bid/ask chains for every eligible stock in the STRATEGY.md watchlist. Candidate B requires those inputs to mechanically verify two local lows within 2%, >=3-session separation, neckline breakout, close above the 20-day moving average, next-session entry timing, cross-candidate ranking, option liquidity, and debit <=40% of spread width. A partial-universe scan was not treated as a valid full-universe evaluation, so no position was manufactured.",
-    "market_context": "On 2026-09-09, S&P 500 closed 7,636.36 (-0.48%), Dow 52,380.66 (-0.77%), Nasdaq 26,253.34 (-0.64%). Brent crude settled above $100 as geopolitical tensions and higher yields weighed on equities.",
+    "reason": "Fresh 2026-09-10 closing-market information was verified, but this run still could not obtain a complete consistent 10-30-session OHLC dataset and executable 7-14 DTE option bid/ask chains for every eligible stock in the STRATEGY.md watchlist. Candidate B requires those inputs to mechanically verify two local lows within 2%, >=3-session separation, neckline breakout, close above the 20-day moving average, next-session entry timing, cross-candidate ranking, option liquidity, and debit <=40% of spread width. A partial-universe scan was not treated as a valid full-universe evaluation, so no position was manufactured.",
+    "market_context": "On 2026-09-10, S&P 500 closed 7,591.75 (-0.58%), Dow 52,064.10 (-0.60%), and Nasdaq 26,081.73 (-0.65%). Rising Treasury yields and a sharp rise in crude oil weighed on equities; Nvidia and Micron were notable decliners while Apple gained.",
     "options_chain_needed": true,
     "sources_checked": [
-      "Reuters 2026-09-09 U.S. market close",
-      "Associated Press 2026-09-09 index close"
+      "Reuters 2026-09-10 U.S. market close",
+      "Associated Press 2026-09-10 index close"
     ]
   },
   "note": "Experimental forward-paper test only. Separate from frozen Candidate A."
